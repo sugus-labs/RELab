@@ -1,1 +1,61 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+	    <title>RELab</title>
+
+	    {% load staticfiles %}
+	    <link rel="icon" href="{% static "img/elevator_24x24.png" %}" type="image/x-icon" />
+
+	    <script type="text/javascript" charset="utf-8" src="{% static "js/jquery-1.9.1.js" %}"></script>
+	    <script type="text/javascript" charset="utf-8" src="{% static "js/jquery-ui.js" %}"></script>
+	    <script type="text/javascript" charset="utf-8" src="{% static "js/jquery.ui.touch-punch.js" %}"></script>
+	    <script type="text/javascript" charset="utf-8" src="{% static "js/bootstrap.js" %}"></script>
+
+	    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+	    <style>
+	      body {
+	        padding-top: 60px; /* 50-60px to make the container go all the way to the bottom of the topbar */
+	      }
+	    </style>
+
+	</head>
+
+  	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">&nbsp;&nbsp;RELab</a>
+	        </div>
+	    </div>
+
+	    <div id="main_panel" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	    	<div id="panel_name" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	    	zkjxfoasdñokfopàsdfko
+	    	</div>
+		    <div id="panel_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		    <img src="{% static "img/shoot.png" %}" class="img-responsive"/>
+		    </div>
+		    <div id="panel_2" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		    	<img src="{% static "img/image_example_front.png" %}" class="img-responsive"/>
+		    </div>
+		    <div id="panel_3" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		    	<img src="{% static "img/image_example_rear.png" %}" class="img-responsive"/>
+		    </div>
+		    <div id="panel_4" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+		    	<img src="{% static "img/shoot.png" %}" class="img-responsive"/>
+		    </div>
+	    </div><!-- /.container -->
+	</body>
+</html>
