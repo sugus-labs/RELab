@@ -114,11 +114,39 @@ $("a[id=panel_1_button_RESET]").click(function() {
    } , 1000);
 });
 
-$("button[id^=button]").click(function() {
+$("button[id=button_2]").click(function() {
    button = $(this);
-   button.addClass("btn-info");
+   image_button = button.find('img')
+   image_button.attr('src', "{% static "img/button_down_ON.png" %}")
    setTimeout(function() {
-      button.removeClass("btn-info");
+      image_button.attr('src', "{% static "img/button_down.png" %}")
+    } , 1000);     
+});
+
+$("button[id=button_1_2]").click(function() {
+   button = $(this);
+   image_button = button.find('img')
+   image_button.attr('src', "{% static "img/button_up_ON.png" %}")
+   setTimeout(function() {
+      image_button.attr('src', "{% static "img/button_up.png" %}")
+    } , 1000);     
+});
+
+$("button[id=button_1_0]").click(function() {
+   button = $(this);
+   image_button = button.find('img')
+   image_button.attr('src', "{% static "img/button_down_ON.png" %}")
+   setTimeout(function() {
+      image_button.attr('src', "{% static "img/button_down.png" %}")
+    } , 1000);     
+});
+
+$("button[id=button_0]").click(function() {
+   button = $(this);
+   image_button = button.find('img')
+   image_button.attr('src', "{% static "img/button_up_ON.png" %}")
+   setTimeout(function() {
+      image_button.attr('src', "{% static "img/button_up.png" %}")
     } , 1000);     
 });
 </script>
