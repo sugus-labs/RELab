@@ -83,8 +83,8 @@
 
 <script>
 $("a[id=panel_1_button_2]").click(function() {
-   //$.post("/RELab", { command: "PUL6" } );
-   $.post("http://192.168.0.140", { command: "PUL6" } );
+   $.post("/RELab", { command: "PUL6" } );
+   //$.post("http://192.168.0.140", { command: "PUL6" } );
    $("a[id=panel_1_button_2]").find('img').attr('src', "{% static "img/elevator_controls_2_ON.png" %}");
    setTimeout(function() {
       $("a[id=panel_1_button_2]").find('img').attr('src', "{% static "img/elevator_controls_2.png" %}");
@@ -92,8 +92,8 @@ $("a[id=panel_1_button_2]").click(function() {
 });
 
 $("a[id=panel_1_button_1]").click(function() {
-   //$.post("/RELab", { command: "PUL5" } );
-   $.post("http://192.168.0.140", { command: "PUL5" } );
+   $.post("/RELab", { command: "PUL5" } );
+   //$.post("http://192.168.0.140", { command: "PUL5" } );
    $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_1_ON.png" %}");
    setTimeout(function() {
       $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_1.png" %}");
@@ -101,8 +101,8 @@ $("a[id=panel_1_button_1]").click(function() {
 });
 
 $("a[id=panel_1_button_0]").click(function() {
-   //$.post("/RELab", { command: "PUL4" } );
-   $.post("http://192.168.0.140", { command: "PUL4" } );
+   $.post("/RELab", { command: "PUL4" } );
+   //$.post("http://192.168.0.140", { command: "PUL4" } );
    $("a[id=panel_1_button_0]").find('img').attr('src', "{% static "img/elevator_controls_0_ON.png" %}");
    setTimeout(function() {
       $("a[id=panel_1_button_0]").find('img').attr('src', "{% static "img/elevator_controls_0.png" %}");
@@ -110,17 +110,17 @@ $("a[id=panel_1_button_0]").click(function() {
 });
 
 $("a[id=panel_1_button_RESET]").click(function() {
-   //$.post("/RELab", { command: "RESET" } );
-   $.post("http://192.168.0.140", { command: "RESET" } );
-   $("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET_ON.png" %}");
-   setTimeout(function() {
-      $("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET.png" %}");
-   } , 1000);
+   $.post("/RELab", { command: "RESET" } );
+   //$.post("http://192.168.0.140", { command: "RESET" } );
+   	$("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET_ON.png" %}");
+   	setTimeout(function() {
+      	$("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET.png" %}");
+   	} , 500);
 });
 
 $("button[id=button_2]").click(function() {
-   //$.post("/RELab", { command: "PUL3" } );
-   $.post("http://192.168.0.140", { command: "PUL3" } );
+   $.post("/RELab", { command: "PUL3" } );
+   //$.post("http://192.168.0.140", { command: "PUL3" } );
    button_2 = $(this);
    image_button_2 = button_2.find('img')
    image_button_2.attr('src', "{% static "img/button_down_ON.png" %}")
@@ -130,8 +130,8 @@ $("button[id=button_2]").click(function() {
 });
 
 $("button[id=button_1_2]").click(function() {
-	//$.post("/RELab", { command: "PUL1" } );
-   $.post("http://192.168.0.140", { command: "PUL1" } );
+	$.post("/RELab", { command: "PUL1" } );
+   //$.post("http://192.168.0.140", { command: "PUL1" } );
    button_1_2 = $(this);
    image_button_1_2 = button_1_2.find('img')
    image_button_1_2.attr('src', "{% static "img/button_up_ON.png" %}")
@@ -141,8 +141,8 @@ $("button[id=button_1_2]").click(function() {
 });
 
 $("button[id=button_1_0]").click(function() {
-	//$.post("/RELab", { command: "PUL2" } );
-   $.post("http://192.168.0.140", { command: "PUL2" } );
+	$.post("/RELab", { command: "PUL2" } );
+   //$.post("http://192.168.0.140", { command: "PUL2" } );
    button_1_0 = $(this);
    image_button_1_0 = button_1_0.find('img')
    image_button_1_0.attr('src', "{% static "img/button_down_ON.png" %}")
@@ -152,8 +152,8 @@ $("button[id=button_1_0]").click(function() {
 });
 
 $("button[id=button_0]").click(function() {
-	//$.post("/RELab", { command: "PUL0" } );
-	$.post("http://192.168.0.140", { command: "PUL6" } );
+	$.post("/RELab", { command: "PUL0" } );
+	//$.post("http://192.168.0.140", { command: "PUL6" } );
    button_0 = $(this);
    image_button_0 = button_0.find('img')
    image_button_0.attr('src', "{% static "img/button_up_ON.png" %}")
