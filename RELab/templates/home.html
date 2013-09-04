@@ -63,13 +63,13 @@
 		    	<div id="panel_4_buttons" class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 		    		<div class="btn-group-vertical">
 		    			<br><br>
-				        <button type="button" class="btn btn-default"><img src="{% static "img/button_down.png" %}" class="img-responsive"/></button>
+				        <button id="button_2" type="button" class="btn"><img src="{% static "img/button_down.png" %}" class="img-responsive"/></button>
 				        <br><br>
-				        <button type="button" class="btn btn-default"><img src="{% static "img/button_up.png" %}" class="img-responsive"/></button>
+				        <button id="button_1_2" type="button" class="btn"><img src="{% static "img/button_up.png" %}" class="img-responsive"/></button>
 				        <br>
-				        <button type="button" class="btn btn-default"><img src="{% static "img/button_down.png" %}" class="img-responsive"/></button>
+				        <button id="button_1_0" type="button" class="btn"><img src="{% static "img/button_down.png" %}" class="img-responsive"/></button>
 				        <br><br>
-				        <button type="button" class="btn btn-default"><img src="{% static "img/button_up.png" %}" class="img-responsive"/></button> 
+				        <button id="button_0" type="button" class="btn"><img src="{% static "img/button_up.png" %}" class="img-responsive"/></button> 
 				      </div>
 		    		</div>
 		    	<div id="panel_4_image" class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
@@ -112,5 +112,13 @@ $("a[id=panel_1_button_RESET]").click(function() {
    setTimeout(function() {
       $("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET.png" %}");
    } , 1000);
+});
+
+$("button[id^=button]").click(function() {
+   button = $(this);
+   button.addClass("btn-info");
+   setTimeout(function() {
+      button.removeClass("btn-info");
+    } , 1000);     
 });
 </script>
