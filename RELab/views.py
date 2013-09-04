@@ -12,7 +12,8 @@ def home(request):
 	elif request.method == 'POST':
 		received_command = request.REQUEST["command"]
 		print received_command
-		post_data = received_command
+		post_data = {command:received_command.encode('utf-8')}
+		print type(post_data)
 		post_data_encoded = urllib.urlencode(post_data)
 		request = urllib2.Request(URL, post_data)
 		response = urllib2.urlopen(request)
