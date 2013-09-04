@@ -14,7 +14,7 @@ def home(request):
 		print request.REQUEST
 		try:
 			received_command = request.REQUEST["command"]
-			print received_command
+			#print received_command
 			if received_command == "RESET":
 				if RESET_state == "OFF":
 					received_command = "PUL7=ON"
@@ -24,6 +24,7 @@ def home(request):
 					RESET_state = "OFF"
 			query_args = { '': received_command }
 			encoded_args = urllib.urlencode(query_args)
+			print received_command
 			try:
 				urllib2.urlopen(URL, encoded_args).read()
 			except:

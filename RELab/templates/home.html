@@ -54,10 +54,10 @@
 		    	<img src="{% static "img/elevator_controls_down.png" %}" class="img-responsive"/>
 		    </div>
 		    <div id="panel_2" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-		    	<img src="{% static "img/image_example_front.png" %}" class="img-responsive"/>
+		    	<img id="image_front" src="{% static "img/image_example_front.png" %}" class="img-responsive"/>
 		    </div>
 		    <div id="panel_3" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-		    	<img src="{% static "img/image_example_rear.png" %}" class="img-responsive"/>
+		    	<img id="image_rear" src="{% static "img/image_example_rear.png" %}" class="crop img-responsive"/>
 		    </div>
 		    <div id="panel_4" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
 		    	<div id="panel_4_buttons" class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
@@ -161,4 +161,13 @@ $("button[id=button_0]").click(function() {
       image_button_0.attr('src', "{% static "img/button_up.png" %}")
     } , 1000);     
 });
+</script>
+
+<script type="text/javascript">
+   var myImageElement = document.getElementById('image_rear');
+   setInterval(function() {
+    var myImageElement = document.getElementById('image_rear');
+    //myImageElement.src = 'http://www.weblab.deusto.es/webcam/proxied.py/romie1?rand=' + Math.random();
+    myImageElement.src = 'http://192.168.0.111/image.jpg?rand=' + Math.random();
+   }, 100);
 </script>
