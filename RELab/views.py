@@ -1,6 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render, render_to_response, redirect
 import json
+import urllib2
+import urllib
+
+URL = "http://www.google.es"
 
 def home(request):
 	if request.method == 'GET':
@@ -8,4 +12,10 @@ def home(request):
 	elif request.method == 'POST':
 		received_command = request.REQUEST["command"]
 		print received_command
+		post_data = received_command
+		post_data_encoded = urllib.urlencode(post_data)
+		request = urllib2.Request(URL, post_data)
+		response = urllib2.urlopen(request)
+		the_page = response.read()
+		#print response.read()
 		return HttpResponse("POST OK")
