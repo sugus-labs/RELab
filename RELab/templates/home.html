@@ -47,9 +47,9 @@
 	    	<hr>
 		    <div id="panel_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
 		    	<img src="{% static "img/elevator_controls_0.png" %}" class="img-responsive"/>
-		    	<img src="{% static "img/elevator_controls_1_ON.png" %}" class="img-responsive"/>
-		    	<img src="{% static "img/elevator_controls_2_ON.png" %}" class="img-responsive"/>
-		    	<img src="{% static "img/elevator_controls_3_ON.png" %}" class="img-responsive"/>
+		    	<a id="panel_1_button_2"><img src="{% static "img/elevator_controls_2.png" %}" class="img-responsive"/></a>
+		    	<a id="panel_1_button_1"><img src="{% static "img/elevator_controls_1.png" %}" class="img-responsive"/></a>
+		    	<a id="panel_1_button_0"><img src="{% static "img/elevator_controls_0.png" %}" class="img-responsive"/></a>
 		    	<img src="{% static "img/elevator_controls_4.png" %}" class="img-responsive"/>
 		    </div>
 		    <div id="panel_2" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
@@ -78,3 +78,34 @@
 	    </div><!-- /.container -->
 	</body>
 </html>
+
+
+<script>
+$("a[id=panel_1_button_2]").click(function() {
+   $.post("/RELab", { command: "2" } );
+   $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_1_ON.png" %}");
+   setTimeout(function() {
+      $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_1.png" %}");
+   } , 1000);
+});
+</script>
+
+<script>
+$("a[id=panel_1_button_1]").click(function() {
+   $.post("/RELab", { command: "1" } );
+   $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_2_ON.png" %}");
+   setTimeout(function() {
+      $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_2.png" %}");
+   } , 1000);
+});
+</script>
+
+<script>
+$("a[id=panel_1_button_0]").click(function() {
+   $.post("/RELab", { command: "0" } );
+   $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_3_ON.png" %}");
+   setTimeout(function() {
+      $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_3.png" %}");
+   } , 1000);
+});
+</script>
