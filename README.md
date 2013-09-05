@@ -1,11 +1,13 @@
 RELab
 =====
 
-RELab is a Remote Elevator Laboratory to test control algorithms on logical programmable devices: 
+RELab is a Remote Elevator Laboratory to test control algorithms on logical programmable devices.
+ 
 The actual version is 0.1.
+
 To put in production only needs a little configuration in apache httpd.conf.
 
-	sudo nano /etc/apache2/httpd.conf
+	$ sudo nano /etc/apache2/httpd.conf
 
 In this file put this two lines at the start of the file:
 
