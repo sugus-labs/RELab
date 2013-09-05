@@ -5,7 +5,7 @@ import urllib2
 import urllib
 
 URL = 'http://192.168.0.140'
-RESET_state = "OFF"
+RESET_state = "ON"
 
 def home(request):
 	if request.method == 'GET':
@@ -15,13 +15,6 @@ def home(request):
 		try:
 			received_command = request.REQUEST["command"]
 			#print received_command
-			if received_command == "RESET":
-				if RESET_state == "OFF":
-					received_command = "PUL7=ON"
-					RESET_state = "ON"
-				else:
-					received_command = "PUL7=OFF"
-					RESET_state = "OFF"
 			query_args = { '': received_command }
 			encoded_args = urllib.urlencode(query_args)
 			print received_command

@@ -21,7 +21,7 @@
 
 	    <style>
 	      body {
-	        padding-top: 50px; /* 50-60px to make the container go all the way to the bottom of the topbar */
+	        padding-top: 56px; /* 50-60px to make the container go all the way to the bottom of the topbar */
 	      }
 	    </style>
 
@@ -54,7 +54,7 @@
 		    	<img src="{% static "img/elevator_controls_down.png" %}" class="img-responsive"/>
 		    </div>
 		    <div id="panel_2" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		    	<img id="image_front" width=100% height=100% class="img-responsive"/>
+		    	<img id="image_front" src='http://www.weblab.deusto.es/webcam/egg2/video.mjpeg' width=100% height=100% class="img-responsive"/>
 		    </div>
 <!-- 		    <div id="panel_3" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
 		    	<img id="image_rear" src="{% static "img/image_example_rear.png" %}" class="crop img-responsive"/>
@@ -83,7 +83,7 @@
 
 <script>
 $("a[id=panel_1_button_2]").click(function() {
-   $.post("/RELab", { command: "PUL6" } );
+   $.post("/RELab/", { command: "PUL6" } );
    //$.post("http://192.168.0.140", { command: "PUL6" } );
    $("a[id=panel_1_button_2]").find('img').attr('src', "{% static "img/elevator_controls_2_ON.png" %}");
    setTimeout(function() {
@@ -92,7 +92,7 @@ $("a[id=panel_1_button_2]").click(function() {
 });
 
 $("a[id=panel_1_button_1]").click(function() {
-   $.post("/RELab", { command: "PUL5" } );
+   $.post("/RELab/", { command: "PUL5" } );
    //$.post("http://192.168.0.140", { command: "PUL5" } );
    $("a[id=panel_1_button_1]").find('img').attr('src', "{% static "img/elevator_controls_1_ON.png" %}");
    setTimeout(function() {
@@ -101,7 +101,7 @@ $("a[id=panel_1_button_1]").click(function() {
 });
 
 $("a[id=panel_1_button_0]").click(function() {
-   $.post("/RELab", { command: "PUL4" } );
+   $.post("/RELab/", { command: "PUL4" } );
    //$.post("http://192.168.0.140", { command: "PUL4" } );
    $("a[id=panel_1_button_0]").find('img').attr('src', "{% static "img/elevator_controls_0_ON.png" %}");
    setTimeout(function() {
@@ -110,7 +110,7 @@ $("a[id=panel_1_button_0]").click(function() {
 });
 
 $("a[id=panel_1_button_RESET]").click(function() {
-   $.post("/RELab", { command: "RESET" } );
+   $.post("/RELab/", { command: "PUL7=OFF" } );
    //$.post("http://192.168.0.140", { command: "RESET" } );
    	$("a[id=panel_1_button_RESET]").find('img').attr('src', "{% static "img/elevator_controls_RESET_ON.png" %}");
    	setTimeout(function() {
@@ -119,7 +119,7 @@ $("a[id=panel_1_button_RESET]").click(function() {
 });
 
 $("button[id=button_2]").click(function() {
-   $.post("/RELab", { command: "PUL3" } );
+   $.post("/RELab/", { command: "PUL3" } );
    //$.post("http://192.168.0.140", { command: "PUL3" } );
    button_2 = $(this);
    image_button_2 = button_2.find('img')
@@ -130,7 +130,7 @@ $("button[id=button_2]").click(function() {
 });
 
 $("button[id=button_1_2]").click(function() {
-	$.post("/RELab", { command: "PUL1" } );
+	$.post("/RELab/", { command: "PUL1" } );
    //$.post("http://192.168.0.140", { command: "PUL1" } );
    button_1_2 = $(this);
    image_button_1_2 = button_1_2.find('img')
@@ -141,7 +141,7 @@ $("button[id=button_1_2]").click(function() {
 });
 
 $("button[id=button_1_0]").click(function() {
-	$.post("/RELab", { command: "PUL2" } );
+	$.post("/RELab/", { command: "PUL2" } );
    //$.post("http://192.168.0.140", { command: "PUL2" } );
    button_1_0 = $(this);
    image_button_1_0 = button_1_0.find('img')
@@ -152,7 +152,7 @@ $("button[id=button_1_0]").click(function() {
 });
 
 $("button[id=button_0]").click(function() {
-	$.post("/RELab", { command: "PUL0" } );
+	$.post("/RELab/", { command: "PUL0" } );
 	//$.post("http://192.168.0.140", { command: "PUL6" } );
    button_0 = $(this);
    image_button_0 = button_0.find('img')
@@ -163,7 +163,7 @@ $("button[id=button_0]").click(function() {
 });
 </script>
 
-// <script type="text/javascript">
+ <script type="text/javascript">
 //    var myImageElement = document.getElementById('image_rear');
 //    setInterval(function() {
 //     var myImageElement = document.getElementById('image_rear');
@@ -172,11 +172,11 @@ $("button[id=button_0]").click(function() {
 //    }, 100);
 // </script>
 
-<script type="text/javascript">
-    var myImageElement = document.getElementById('image_front');
-    setInterval(function() {
-     var myImageElement = document.getElementById('image_front');
-     //myImageElement.src = 'http://www.weblab.deusto.es/webcam/proxied.py/romie1?rand=' + Math.random();
-     myImageElement.src = 'http://192.168.0.112/image.jpg?rand=' + Math.random();
-    }, 50);
-</script>
+ <script type="text/javascript">
+//     var myImageElement = document.getElementById('image_front');
+//     setInterval(function() {
+//      var myImageElement = document.getElementById('image_front');
+//      //myImageElement.src = 'http://www.weblab.deusto.es/webcam/proxied.py/egg1?rand=' + Math.random();
+//      myImageElement.src = 'http://192.168.0.112/image.jpg?rand=' + Math.random();
+//     }, 150);
+// </script>
